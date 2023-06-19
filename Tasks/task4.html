@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Using Callbacks to add more properties in object
+
+      let obj = { name: "Tejash" };
+
+      function fun1(value) {
+        console.log(value);
+        function fun2(value) {
+          value.age = 24;
+          console.log(value);
+          function fun3(value) {
+            value.address = "Surat";
+          }
+          fun3(obj);
+        }
+        fun2(obj);
+      }
+
+      fun1(obj);
+      console.log(obj);
+
+      // Using Promise to add more properties in object
+
+      let obj1 = {};
+
+      let pro = new Promise(function (resolve, reject) {
+        resolve(obj1);
+        // reject(new Error("This Will Reject The Promise"));
+      });
+
+      pro
+        .then(function (value) {
+          value.name = "Tejash";
+          return value;
+        })
+        .then(function (value) {
+          value.age = 25;
+          return value;
+        })
+        .then(function (value) {
+          value.address = "Surat";
+        })
+        .catch(function (err) {
+          console.log("error", err);
+        });
+
+      console.log(pro);
+      console.log(obj1);
+
+      // Using Try Catch to add more properties in object
+
+      let obj2 = {};
+
+      let f1 = (value) => {
+        value.name = "Tejash";
+        console.log("f1 will execute first", value);
+        return value;
+      };
+
+      let f2 = (value) => {
+        setTimeout(function () {
+          value.age = 25;
+          console.log("f2 will execute after 3 seconds", value);
+        }, 3000);
+        return value;
+      };
+
+      let f3 = (value) => {
+        value.address = "Surat";
+        console.log("f3 will execute after f1", value);
+        return value;
+      };
+
+      f1(obj2);
+      f2(obj2);
+      f3(obj2);
+
+      let tryCatch = async () => {
+        try {
+        } catch (err) {
+          console.log("error", err);
+        }
+      };
+      tryCatch();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      let person = [
+        { name: "kush", age: 12 },
+        { name: "tej", age: 10 },
+        { name: "smit", age: 18 },
+        { name: "ram", age: 20 },
+      ];
+
+      // print only name of person using map function
+      let name = person.map((x) => x.name);
+      console.log("name of persons in array ===> ", name);
+
+      // find total age using for loop below
+      let totalAge = 0;
+      for (x of person) {
+        totalAge += x.age;
+      }
+      console.log("total age using for loop ===>", totalAge);
+
+      // find total age using reduce function
+      let totalAge2 = 0;
+      totalAge2 = person.reduce((a, b) => {
+        // console.log(a, b);  // for checking the value of a and b
+        return (a.age || a) + b.age;
+        // return { age: a.age + b.age };  // we can also try this to find total age, it will return object
+      });
+      console.log("total age using reduce function ===>", totalAge2);
+
+      // find length of array without using length method
+      let counter = 0;
+      for (x of person) {
+        console.log(x);
+        if (x !== undefined) counter++;
+      }
+      console.log("total person in array using for loop ===>", counter); // old method for loop above
+
+      // find length of array using map function
+      let counter2 = 0;
+      person.map((x) => {
+        counter2++;
+      });
+      console.log("total person in array using map function ===>", counter2); // this will be helpful in future
+
+      console.log(person.length); // easy for find length of array using length property
+
+      // give new array which have only perosn who have agee greater than 18
+      let person2 = person.filter((x) => x.age > 18);
+      console.log("total person of age greater than 18 ===> ", person2);
+      console.log(
+        "total number of person of age greater than 18 ===> ",
+        person2.length
+      );
+
+      console.log(person);
+      console.log(person2);
+    </script>
+  </body>
+</html>

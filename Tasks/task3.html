@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let prDetails = {
+        name: "Tejash",
+        surname: "Patel",
+        age: 10,
+        address: {
+          city: "Surat",
+        },
+        vehicle: ["Splendor", "Activa", { a: 10 }],
+        fun1: function (x) {
+          console.log("x = ", x);
+          return x;
+        },
+      };
+
+      // Print All Values Of prDetails One By One
+
+      console.log(prDetails.name);
+      console.log(prDetails.surname);
+      console.log(prDetails.age);
+      console.log(prDetails.address);
+      console.log(prDetails.address.city);
+      console.log(prDetails.vehicle);
+      console.log(prDetails.vehicle[0]);
+      console.log(prDetails.vehicle[2].a);
+      console.log(prDetails.fun1);
+      console.log(prDetails.fun1(20));
+    </script>
+  </body>
+</html>
