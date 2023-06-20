@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #clock {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 80px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock"></div>
+    <script>
+      // Make Digital Clock Using Date Functions
+      function showTime() {
+        let time = new Date();
+        let hour = time.getHours(); // for get hours
+        let minute = time.getMinutes(); // for get minutes
+        let second = time.getSeconds(); // for get second
+        let am_pm = "";
+
+        if (hour > 12) {
+          hour -= 12;
+          am_pm = "PM";
+        }
+        if (hour == 0) {
+          hr = 12;
+          am_pm = "AM";
+        }
+
+        hour = hour < 10 ? "0" + hour : hour; // if hour is less than 10 then adds 0 before hour
+        minute = minute < 10 ? "0" + minute : minute; // if minute is less than 10 then adds 0 before minute
+        second = second < 10 ? "0" + second : second; // if second is less than 10 then adds 0 before second
+
+        let currentTime = `${hour} : ${minute} : ${second} ${am_pm}`;
+        document.getElementById("clock").innerHTML = currentTime;
+      }
+
+      setInterval(showTime, 1000);
+    </script>
+  </body>
+</html>
