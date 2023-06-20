@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Math library
+      // Math Object is Built-in Object In JavaScript
+      console.log(Math);
+
+      let number = 9.8;
+
+      console.log(Math.round(number)); // round to nearest integer
+
+      console.log(Math.floor(number)); // round to down integer
+
+      console.log(Math.ceil(number)); // round to up integer
+
+      console.log(Math.trunc(number)); // remove decimal part
+
+      let random = Math.random(); // generates random number between 0 and 0.999999999999999999
+      console.log(random * 100); // generates random number between 0 and 99.99999999999999999
+      console.log(Math.round(random * 100)); // rounds the decimal nearest decimal point value
+
+      // Make Dice Using Math.random() function
+      let diceNum = Math.floor(Math.random() * 6 + 1);
+      console.log(diceNum);
+    </script>
+  </body>
+</html>
