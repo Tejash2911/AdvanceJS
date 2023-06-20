@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Make Sum, Sub, and Multiply Method inside Object
+      let obj = {
+        x: 100,
+        a: 50,
+        sum: function () {
+          console.log(`Sum Is ${this.x + this.a}`);
+        },
+        sub: function (y) {
+          console.log(`Substraction Is ${this.x - y}`);
+        },
+        multiply: function (y) {
+          console.log(`Multiplication Is ${this.x * y}`);
+        },
+      };
+      obj.sum();
+      // Random Value of the Second Number(y)
+      obj.sub(20);
+      obj.multiply(20);
+    </script>
+  </body>
+</html>
