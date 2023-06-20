@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sum(a, b) {
+        return a + b;
+      }
+      console.log(sum(10, 20));
+
+      // When We Don't Know How Many Arguments Are Coming Then
+      // Store The Remaining Arguments into Rest Operator(here ...c)
+      // All Remaining Arguments Store As Array, so We Can Use Any Array Method To Do The operations
+
+      function sum1(a, b, ...c) {
+        // console.log(c);
+        let rest = c.reduce((a, b) => a + b);
+        return a + b + rest;
+      }
+      console.log(sum1(1, 2, 3, 4, 5));
+    </script>
+  </body>
+</html>
