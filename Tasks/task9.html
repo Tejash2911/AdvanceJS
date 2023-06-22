@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function f1(value1) {
+        if (value1 > 0) {
+          console.log(value1);
+          value1--;
+          f1(value1);
+        } else {
+          console.log("Recursion Break");
+          return;
+        }
+      }
+      f1(10);
+
+      // Task
+      // Pass The Array Instead Of Single Value And Print The Elements Of The Array
+
+      function myFunction(value) {
+        if (value.length > 0) {
+          console.log(value.shift());
+          myFunction(value);
+        } else {
+          console.log("Recursion Break");
+          return;
+        }
+      }
+      let arr = [10, 20, 30, 40, 50];
+      myFunction(arr);
+      console.log(arr);
+    </script>
+  </body>
+</html>
