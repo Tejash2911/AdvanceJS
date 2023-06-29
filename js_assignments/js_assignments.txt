@@ -1,0 +1,119 @@
+-> Want to re-use variable name so which variable declare mathod should i use
+
+------------------------------------------------------------------------------------------
+
+-> give the list which variavble name not works in js
+1. let a=0
+2. let "a"=0
+3. let 'a'=0
+4. let `10`=0
+5. let 1=0
+------------------------------------------------------------------------------------------
+
+let x = 100
+var y = 100
+const z = 100
+const m
+{
+      x= 90 
+      y= 90 
+      z= 90 
+      console.log(x) ___________________ point-x1
+      console.log(y) ___________________ point-y1
+      console.log(z) ___________________ point-z1
+      console.log(m) ___________________ 
+} 
+
+console.log(x) ___________________ point-x2
+console.log(y) ___________________ point-y2
+console.log(z) ___________________ point-z2
+
+what will print at x1-_______
+what will print at y1-_______
+what will print at z1-_______
+what will print at x2-_______
+what will print at y2-_______
+what will print at z2-_______
+
+------------------------------------------------------------------------------------------
+
+-> task-2
+
+console.log(x) ___________________ point-x2
+console.log(y) ___________________ point-y2
+console.log(z) ___________________ point-z2
+
+{
+      let x = 100
+      var y = 100
+      const z = 100
+}
+
+console.log(x) ___________________ point-x1
+console.log(y) ___________________ point-y1
+console.log(z) ___________________ point-z1
+
+
+what will print at x1-_______
+what will print at y1-_______
+what will print at z1-_______
+what will print at x2-_______
+what will print at y2-_______
+what will print at z2-_______
+
+------------------------------------------------------------------------------------------
+Object
+
+---> make one object who contain your detail like - name,age,multiple vehicles
+-name,and one function print your name and then do below given task
+
+1. print all value of your details object
+2. add a function name printAge inside object who print age (from outside)
+3. get all key
+4. get all value
+5. add one key for city name and store your city name on it  (from outside)
+6. delete age key from object
+7. make one function name addAge who print age with add some year which one pass by user
+
+
+------------------------------------------------------------------------------------------
+Array
+
+-> make one array who have value from 1 to 10
+
+1. print 9th and 10th index of array
+2. print every element of array by map reduce and for loop
+3. change a value of 6th index with 100
+4. print a array till element value not gratter then 100
+5. pluse 1 in every element of an array
+6. add 0 in start of array
+7. add  99 in end of array
+8. remove 1 element from start of  array
+9. remove 1 element from end of array
+10. do sum of all value of an array with use of map, reduce and for-loop
+11. sort a array in acending decending
+12. reverce an array with use of method
+13. reverce an array with use of for-loop
+
+___________________________________________________________________________________
+
+task-2
+[1,2,3,6,7,9,3,56,8]
+
+1. give all value which can devided by 2 - not use filter
+2. give all value above 3 by use of filter
+3. give index of 56
+4. give true/false result when check given vale is exists in array or not
+
+___________________________________________________________________________________
+
+task-3
+1. ['i','am', 'urvish'] ==> want ['urvish','am','i']
+by use of map, loop and reducer 
+2. want "i am urvish" without use join method
+___________________________________________________________________________________
+
+task-4
+
+['i','am', 'urvish'] ==> want ['hsivru','ma','i'  ]
+by use of map, loop and reducer 
