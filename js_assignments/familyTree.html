@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let familyDetails = {
+        name: "GopalBhai",
+        age: 100,
+        sons: [
+          {
+            id: 7,
+            name: "DayalBhai",
+            age: 80,
+            occupation: "Self-Employed",
+            sons: [
+              {
+                name: "ChimanBhai",
+                Age: 55,
+                vehicles: ["Splendor", "Activa"],
+              },
+              {
+                name: "KantiBhai",
+                Age: 50,
+                vehicles: ["Activa"],
+              },
+            ],
+          },
+          {
+            id: 8,
+            name: "SomaBhai",
+            age: 70,
+            occupation: "Helper",
+            sons: [
+              {
+                name: "HemantBhai",
+                age: 37,
+                vehicles: ["Eeco", "Passion", "Activa"],
+              },
+            ],
+          },
+          {
+            id: 9,
+            name: "IshwarBhai",
+            age: 60,
+            occupation: "Farmer",
+            sons: [
+              {
+                name: "RiteshBhai",
+                age: 35,
+                vehicles: ["WagonR", "Splendor", "Activa"],
+              },
+            ],
+          },
+        ],
+      };
+
+      // Print The Names Of All Sons Of Given Id
+
+      familyDetails.getSonsName = function (searchId) {
+        let s = this.sons;
+        // console.log(s);
+        s.map((ele) => {
+          if (ele.id == searchId) {
+            ele.sons.map((item) => {
+              console.log(item.name);
+            });
+          }
+        });
+      };
+
+      familyDetails.getSonsName(8);
+
+      // Print The Names Of All Vehicles Of Given Id
+
+      familyDetails.getVehName = function (searchId) {
+        let v = this.sons;
+        // console.log(v);
+        v.map((ele) => {
+          if (ele.id == searchId) {
+            ele.sons.map((item) => {
+              console.log(item.vehicles);
+            });
+          }
+        });
+      };
+
+      familyDetails.getVehName(8);
+    </script>
+  </body>
+</html>
