@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 50px 100px;
+        background-color: #3d424a;
+      }
+
+      h1 {
+        text-align: center;
+        color: white;
+      }
+
+      #watch-container {
+        background-color: #2c3e50;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #d7dfe4;
+        padding: 20px;
+      }
+
+      .digit {
+        font-size: 100px;
+        font-weight: bold;
+        padding: 10px;
+      }
+
+      .txt {
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      #btn-container {
+        text-align: center;
+        margin: 20px 0px 0px 0px;
+      }
+
+      .btn {
+        padding: 7px 25px;
+        font-size: 15px;
+        font-weight: bold;
+        margin: 0px 10px;
+        cursor: pointer;
+        color: white;
+        border: none;
+      }
+
+      #start {
+        background-color: #1abc9c;
+      }
+
+      #stop {
+        background-color: #3498db;
+        display: none;
+      }
+
+      #reset {
+        background-color: #e74c3c;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>StopWatch</h1>
+    <div id="watch-container">
+      <div id="time">
+        <span class="digit" id="hr">00</span>
+        <span class="txt">Hr</span>
+        <span class="digit" id="min">00</span>
+        <span class="txt">Min</span>
+        <span class="digit" id="sec">00</span>
+        <span class="txt">Sec</span>
+        <span class="digit" id="count">00</span>
+      </div>
+    </div>
+
+    <div id="btn-container">
+      <button class="btn" id="start" onclick="start_fn()">Start</button>
+      <button class="btn" id="stop" onclick="stop_fn()">Stop</button>
+      <button class="btn" id="reset" onclick="reset_fn()">Reset</button>
+    </div>
+
+    <script>
+      let hr = 0;
+      let min = 0;
+      let sec = 0;
+      let count = 0;
+
+      let timer = false;
+
+      function start_fn() {
+        timer = true;
+        stopwatch();
+        if (timer == true) {
+          document.getElementById("start").style.display = "none";
+          document.getElementById("stop").style.display = "inline-block";
+        }
+      }
+      function stop_fn() {
+        timer = false;
+        document.getElementById("stop").style.display = "none";
+        document.getElementById("start").innerHTML = "Resume";
+        document.getElementById("start").style.display = "inline-block";
+      }
+      function reset_fn() {
+        timer = false;
+        hr = 0;
+        min = 0;
+        sec = 0;
+        count = 0;
+
+        document.getElementById("hr").innerHTML = "00";
+        document.getElementById("min").innerHTML = "00";
+        document.getElementById("sec").innerHTML = "00";
+        document.getElementById("count").innerHTML = "00";
+        document.getElementById("start").innerHTML = "Start";
+        document.getElementById("start").style.display = "inline-block";
+      }
+
+      function stopwatch() {
+        if (timer == true) {
+          count = count + 1;
+
+          if (count == 100) {
+            sec = sec + 1;
+            count = 0;
+          }
+          if (sec == 60) {
+            min = min + 1;
+            sec = 0;
+          }
+          if (min == 60) {
+            hr = hr + 1;
+            min = 0;
+            sec = 0;
+          }
+
+          let hrString = hr;
+          let minString = min;
+          let secString = sec;
+          let countString = count;
+
+          if (hr < 10) {
+            hrString = "0" + hrString;
+          }
+          if (min < 10) {
+            minString = "0" + minString;
+          }
+          if (sec < 10) {
+            secString = "0" + secString;
+          }
+          if (count < 10) {
+            countString = "0" + countString;
+          }
+          document.getElementById("hr").innerHTML = hrString;
+          document.getElementById("min").innerHTML = minString;
+          document.getElementById("sec").innerHTML = secString;
+          document.getElementById("count").innerHTML = countString;
+          setTimeout("stopwatch()", 10);
+        }
+      }
+    </script>
+  </body>
+</html>
