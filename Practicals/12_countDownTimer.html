@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Countdown Timer</title>
+  </head>
+  <body>
+    <div id="timer"></div>
+    <script>
+      function startCountdown(durationInSeconds) {
+        const timerElement = document.getElementById("timer");
+        let remainingTime = durationInSeconds;
+
+        function updateTimerDisplay() {
+          const minutes = Math.floor(remainingTime / 60);
+          const seconds = remainingTime % 60;
+
+          timerElement.textContent = `${minutes}:${seconds
+            .toString()
+            .padStart(2, "0")}`;
+        }
+
+        updateTimerDisplay();
+
+        const timerInterval = setInterval(() => {
+          remainingTime--;
+
+          if (remainingTime <= 0) {
+            clearInterval(timerInterval);
+            timerElement.textContent = "Time's up!";
+          } else {
+            updateTimerDisplay();
+          }
+        }, 1000);
+      }
+
+      // Start the countdown with a duration of 5 minutes (300 seconds)
+      startCountdown(300);
+    </script>
+  </body>
+</html>
