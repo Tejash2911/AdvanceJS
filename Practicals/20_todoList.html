@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="todoText" />
+    <button onclick="addTodo()">Add Todo</button>
+    <div>
+      <ul id="list"></ul>
+    </div>
+
+    <script>
+      let todos = [];
+      function addTodo() {
+        let todoText = document.getElementById("todoText").value;
+        todos.push(todoText);
+        document.getElementById("todoText").value = "";
+        displayTodo();
+      }
+
+      function deleteTodo(id) {
+        todos.splice(id, 1);
+        displayTodo();
+      }
+
+      function editTodo(id) {
+        document.getElementById("todoText").value = todos[id];
+        todos.splice(id, 1);
+      }
+
+      function displayTodo() {
+        let str = "";
+        todos.map((ele, i) => {
+          str += `<li>
+            ${ele}
+            <button onclick="deleteTodo(${i})">Delete</button>
+            <button onclick="editTodo(${i})">Edit</button>
+            </li>`;
+          return str;
+        });
+        document.getElementById("list").innerHTML = str;
+      }
+    </script>
+  </body>
+</html>
